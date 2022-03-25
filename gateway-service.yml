@@ -8,14 +8,14 @@ spring:
           enabled: false
           lower-case-service-id: true
       routes:
-        - id: games-service-route
-          uri: lb://games-service
+        - id: movie-service-route
+          uri: lb://movie-service
           predicates:
-            - Path=/games/**
-        - id: games-service-library-route
-          uri: lb://games-service-library
+            - Path=/movies/**
+        - id: catalog-service-route
+          uri: lb://catalog-service
           predicates:
-            - Path=/library/**
+            - Path=/catalog/**
 
 server:
   port: 8080
