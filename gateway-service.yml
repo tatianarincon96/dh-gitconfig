@@ -1,8 +1,17 @@
 spring:
   application:
     name: gateway-service
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            cliend-id: 67fd42feca05c91f2a53
+            client-secret: c56f10067e276ce0b7d33ed9cbd0e3e4fe5845ec
   cloud:
     gateway:
+      default-filters:
+        - TokenRelay
       discovery:
         locator:
           enabled: false
