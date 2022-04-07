@@ -4,14 +4,19 @@ spring:
   security:
     oauth2:
       client:
+        provider:
+          google:
+            issuer-uri: https://accounts.google.com
         registration:
-          github:
-            cliend-id: 67fd42feca05c91f2a53
-            client-secret: c56f10067e276ce0b7d33ed9cbd0e3e4fe5845ec
+          google:
+            cliend-id: 400884257819-fagl6eh7p712ojepqa5m7r92g49ak3ck.apps.googleusercontent.com
+            client-secret: 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
+            scope: openid,profile,email
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
   cloud:
     gateway:
       default-filters:
-        - TokenRelay
+        - OIDCTokenRelay
       discovery:
         locator:
           enabled: false
