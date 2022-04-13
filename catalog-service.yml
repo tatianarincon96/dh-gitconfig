@@ -5,7 +5,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issue-uri: https://accounts.google.com
+          issuer-uri: https://accounts.google.com
   mvc:
     log-request-details: true
 
