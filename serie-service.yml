@@ -1,9 +1,11 @@
 spring:
   application:
-    name: series-service
+    name: serie-service
   data:
     mongodb:
-        url: mongodb://localhost:27017/series_database
+      host: localhost
+      port: 27017
+      database: serie_database
   security:
     oauth2:
       resourceserver:
@@ -18,7 +20,7 @@ server:
 logging:
   level:
     org.springframework.security: DEBUG
-    
+
 eureka:
   client:
     fetchRegistry: true
