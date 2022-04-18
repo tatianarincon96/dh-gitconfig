@@ -54,10 +54,10 @@ resilience4j:
       movies:
         waitDuration: 1000
         maxAttempts: 3
-        retryExceptions[0]:
+        retryExceptions:
           - feign.FeignException$InternalServerError
       series:
         waitDuration: 1000
         maxAttempts: 3
-        retryExceptions[0]:
+        retryExceptions:
           - feign.FeignException$InternalServerError
