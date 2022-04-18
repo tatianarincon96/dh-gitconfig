@@ -8,6 +8,9 @@ spring:
           issuer-uri: https://accounts.google.com
   mvc:
     log-request-details: true
+  zipkin:
+    base-url: http:localhost:9411/
+    enabled: true
 
 server:
   port: 8091
@@ -37,9 +40,23 @@ resilience4j:
         registerHealthIndicator: true
         registerHealthIndicatorToFail: false
         automaticTransitionFromOpenToHalfOpenEnabled: true
+      series:
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 15000
+        permittedNumberOfCallsInHalfOpenState: 3
+        registerHealthIndicator: true
+        registerHealthIndicatorToFail: false
+        automaticTransitionFromOpenToHalfOpenEnabled: true
   retry:
     instances:
       movies:
+        waitDuration: 1000
+        maxAttempts: 3
+        retryExceptions:
+          - feign.FeignException$InternalServerError
+      series:
         waitDuration: 1000
         maxAttempts: 3
         retryExceptions:
