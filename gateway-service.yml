@@ -14,7 +14,7 @@ spring:
             scope: openid,profile,email
             redirect-uri: http://localhost:8080/login/oauth2/code/google
   zipkin:
-    base-url: http:localhost:9411/
+    base-url: http:zipkin:9411/
     enabled: true
   cloud:
     gateway:
