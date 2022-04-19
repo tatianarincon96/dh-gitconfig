@@ -1,6 +1,11 @@
 spring:
   application:
     name: catalog-service
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
   security:
     oauth2:
       resourceserver:
@@ -11,6 +16,14 @@ spring:
   zipkin:
     base-url: http:localhost:9411/
     enabled: true
+
+queue:
+  movie:
+    name: MovieQueue
+  serie:
+    name: SerieQueue
+
+message: listener
 
 server:
   port: 8091

@@ -1,6 +1,11 @@
 spring:
   application:
     name: movie-service
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/movie_database
@@ -21,6 +26,15 @@ spring:
           issuer-uri: https://accounts.google.com
   mvc:
     log-request-details: true
+  zipkin:
+    base-url: http:localhost:9411/
+    enabled: true
+
+queue:
+  movie:
+    name: MovieQueue
+
+message: registro up
 
 server:
   port: 8081
