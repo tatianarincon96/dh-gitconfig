@@ -27,14 +27,12 @@ spring:
   mvc:
     log-request-details: true
   zipkin:
-    base-url: http:zipkin:9411/
+    base-url: http://zipkin:9411/
     enabled: true
 
 queue:
   movie:
     name: MovieQueue
-
-message: registro up
 
 server:
   port: 8081
@@ -42,7 +40,7 @@ server:
 logging:
   level:
     org.springframework.security: DEBUG
-    
+
 eureka:
   client:
     fetchRegistry: true

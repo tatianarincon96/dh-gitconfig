@@ -6,6 +6,11 @@ spring:
     password: guest
     host: rabbitmq
     port: 5672
+  data:
+    mongodb:
+      host: db-mongo-serie
+      port: 27017
+      database: catalog_database
   security:
     oauth2:
       resourceserver:
@@ -14,7 +19,7 @@ spring:
   mvc:
     log-request-details: true
   zipkin:
-    base-url: http:zipkin:9411/
+    base-url: http://zipkin:9411/
     enabled: true
 
 queue:
@@ -23,7 +28,6 @@ queue:
   serie:
     name: SerieQueue
 
-message: listener
 
 server:
   port: 8091

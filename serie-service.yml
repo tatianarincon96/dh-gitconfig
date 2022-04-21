@@ -8,8 +8,8 @@ spring:
     port: 5672
   data:
     mongodb:
-      host: db-mongo-serie
-      port: 27018
+      host: db-mongo-catalog
+      port: 27017
       database: serie_database
   security:
     oauth2:
@@ -19,14 +19,13 @@ spring:
   mvc:
     log-request-details: true
   zipkin:
-    base-url: http:zipkin:9411/
+    base-url: http://zipkin:9411/
     enabled: true
 
 queue:
   serie:
     name: SerieQueue
 
-message: registro up
 
 server:
   port: 8082
