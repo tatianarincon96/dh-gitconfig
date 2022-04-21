@@ -8,7 +8,7 @@ spring:
     port: 5672
   data:
     mongodb:
-      host: db-mongo-serie
+      host: db-mongo-catalog
       port: 27017
       database: catalog_database
   security:
