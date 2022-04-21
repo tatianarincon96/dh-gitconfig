@@ -9,7 +9,7 @@ spring:
   data:
     mongodb:
       host: db-mongo-serie
-      port: 27017
+      port: 27018
       database: serie_database
   security:
     oauth2:
